@@ -18,15 +18,18 @@ export default function App() {
   )
 );
 
-let newItemText = '';
-const onChangeText = (text) => {
-  newItemText = text;
-}
+const [text, onChangeText] = useState("");
+
+//let newItemText = '';
+// const onChangeText = (text) => {
+//   newItemText = text;
+// }
 
 const addToList = () => {
   // console.log({todo: newItemText});
   // console.log([...items, {todo: newItemText}]);
-  setItems([...items, {todo: newItemText}]);
+  setItems([...items, {todo: text}]);
+  onChangeText("");
 }
 
   return (
